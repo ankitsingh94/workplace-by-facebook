@@ -1,0 +1,2733 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_template/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category display_value="User Management">10115a01db3ad340868f5404ce961918</category>
+        <copied_from>dacf2ee8dbcb9700868f5404ce961930</copied_from>
+        <copied_from_name>Lookup User ID</copied_from_name>
+        <description>&lt;p&gt;This action fetches user ID based on the users registered email in Workplace by Facebook.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Inputs:&lt;/b&gt;&lt;/p&gt;
+&lt;ul&gt;  
+	&lt;li&gt;&lt;b&gt;Email&lt;/b&gt; - The email address of the user with which user had registered in Workplace by Facebook.&lt;/li&gt;  
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;b&gt;Outputs:&lt;/b&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;b&gt;Status&lt;/b&gt; - Will be set to “Success" if the request succeeds or “Error" if a failure occurs.&lt;/li&gt;
+	&lt;li&gt;&lt;b&gt;Error Message&lt;/b&gt; - Will be populated when the status is “Error”.&lt;/li&gt;
+	&lt;li&gt;&lt;b&gt;User ID&lt;/b&gt; - User ID of the user in Workplace by Facebook.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;b&gt;Error Messages:&lt;/b&gt;&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;User does not exist.&lt;/li&gt;
+	&lt;li&gt;Either the access token is invalid or the access token lacks enough permission to perform this action.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To use this action, the corresponding Workplace by Facebook connection and credential must be created and associated with the Workplace by Facebook Connection &amp; Credential alias.  &lt;a target="_blank" href="http://docs.servicenow.com/?context=CSHelp:credentials-connections-alias"&gt;Learn More&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Note&lt;/b&gt;: Requires a subscription for production use. &lt;a target="_blank" href="https://docs.servicenow.com/?context=CSHelp:IntegrationHub-licensing-information"&gt;Read More&lt;/a&gt;.&lt;/p&gt;</description>
+        <ih_action>false</ih_action>
+        <internal_name>lookup_user_id</internal_name>
+        <label_cache>[{"name":"{{action.email}}","label":"action➛Email","type":"action","ref":""},{"name":"{{step[0b69028e-6cbe-4daa-acc9-5d4620941423].e}}","label":"step➛Pre Processing➛e","type":"step","ref":""},{"name":"{{step[0b69028e-6cbe-4daa-acc9-5d4620941423].em}}","label":"step➛Pre Processing➛em","type":"step","ref":""},{"name":"{{step[0b69028e-6cbe-4daa-acc9-5d4620941423].ema}}","label":"step➛Pre Processing➛ema","type":"step","ref":""},{"name":"{{step[0b69028e-6cbe-4daa-acc9-5d4620941423].emai}}","label":"step➛Pre Processing➛emai","type":"step","ref":""},{"name":"{{step[0b69028e-6cbe-4daa-acc9-5d4620941423].email}}","label":"step➛Pre Processing➛email","type":"step","ref":""},{"name":"{{step[eb01b2a2-0c40-461b-8a84-df94573dd99f].response_body}}","label":"step➛Lookup User ID➛Response Body","type":"step","ref":""},{"name":"{{step[eb01b2a2-0c40-461b-8a84-df94573dd99f].status_code}}","label":"step➛Lookup User ID➛Status Code","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].s}}","label":"step➛Handle Errors➛s","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].st}}","label":"step➛Handle Errors➛st","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].sta}}","label":"step➛Handle Errors➛sta","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].stat}}","label":"step➛Handle Errors➛stat","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].statu}}","label":"step➛Handle Errors➛statu","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].status}}","label":"step➛Handle Errors➛status","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].e}}","label":"step➛Handle Errors➛e","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].er}}","label":"step➛Handle Errors➛er","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].err}}","label":"step➛Handle Errors➛err","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].erro}}","label":"step➛Handle Errors➛erro","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].error}}","label":"step➛Handle Errors➛error","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].error_}}","label":"step➛Handle Errors➛error_","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].error_m}}","label":"step➛Handle Errors➛error_m","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].error_me}}","label":"step➛Handle Errors➛error_me","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].error_mes}}","label":"step➛Handle Errors➛error_mes","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].error_mess}}","label":"step➛Handle Errors➛error_mess","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].error_messa}}","label":"step➛Handle Errors➛error_messa","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].error_messag}}","label":"step➛Handle Errors➛error_messag","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].error_message}}","label":"step➛Handle Errors➛error_message","type":"step","ref":""},{"name":"{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].user_id}}","label":"step➛Handle Errors➛user_id","type":"step","ref":""}]</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <name>Lookup User ID</name>
+        <natlang/>
+        <outputs/>
+        <outputs/>
+        <state>draft</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:29</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>27b14a821ba99010c2bc0fa9cc4bcb70</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Lookup User ID</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Workplace By Facebook" source="x_snc_workplace_fb">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_27b14a821ba99010c2bc0fa9cc4bcb70</sys_update_name>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:34</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=27b14a821ba99010c2bc0fa9cc4bcb70"/>
+    <sys_variable_value action="delete_multiple" query="document_key=27b14a821ba99010c2bc0fa9cc4bcb70"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_definition</document>
+        <document_key>27b14a821ba99010c2bc0fa9cc4bcb70</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:32</sys_created_on>
+        <sys_id>50c18a821ba99010c2bc0fa9cc4bcb2b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:32</sys_updated_on>
+        <value/>
+        <variable display_value="">8cc18a821ba99010c2bc0fa9cc4bcb12</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=27b14a821ba99010c2bc0fa9cc4bcb70"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>error_message</field>
+        <id>27b14a821ba99010c2bc0fa9cc4bcb70</id>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:32</sys_created_on>
+        <sys_id>58c18a821ba99010c2bc0fa9cc4bcb2a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:32</sys_updated_on>
+        <table>var__m_sys_hub_action_output_27b14a821ba99010c2bc0fa9cc4bcb70</table>
+        <value>{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].error_message}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>status</field>
+        <id>27b14a821ba99010c2bc0fa9cc4bcb70</id>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:32</sys_created_on>
+        <sys_id>dcc18a821ba99010c2bc0fa9cc4bcb2a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:32</sys_updated_on>
+        <table>var__m_sys_hub_action_output_27b14a821ba99010c2bc0fa9cc4bcb70</table>
+        <value>{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].status}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>user_id</field>
+        <id>27b14a821ba99010c2bc0fa9cc4bcb70</id>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:32</sys_created_on>
+        <sys_id>1cc18a821ba99010c2bc0fa9cc4bcb2a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:32</sys_updated_on>
+        <table>var__m_sys_hub_action_output_27b14a821ba99010c2bc0fa9cc4bcb70</table>
+        <value>{{step[f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb].user_id}}</value>
+    </sys_element_mapping>
+    <sys_hub_step_instance action="delete_multiple" query="action=27b14a821ba99010c2bc0fa9cc4bcb70^sys_idNOT IN2bb14a821ba99010c2bc0fa9cc4bcb87,3bb14a821ba99010c2bc0fa9cc4bcb9c,bfb14a821ba99010c2bc0fa9cc4bcbbf"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Lookup User ID">27b14a821ba99010c2bc0fa9cc4bcb70</action>
+        <cid>0b69028e-6cbe-4daa-acc9-5d4620941423</cid>
+        <extended_inputs/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Pre Processing</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:29</sys_created_on>
+        <sys_id>2bb14a821ba99010c2bc0fa9cc4bcb87</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=2bb14a821ba99010c2bc0fa9cc4bcb87"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>2bb14a821ba99010c2bc0fa9cc4bcb87</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>3fb14a821ba99010c2bc0fa9cc4bcb99</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+  inputs = new sn_fb_wp_spoke.FacebookWorkplaceUtils().trimStringInputs(inputs);
+  outputs.email = inputs.email;
+})(inputs, outputs);
+</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>2bb14a821ba99010c2bc0fa9cc4bcb87</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>7bb14a821ba99010c2bc0fa9cc4bcb99</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <value>35aa573fd7802200bdbaee5b5e610375</value>
+        <variable display_value="">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=2bb14a821ba99010c2bc0fa9cc4bcb87"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>application</field>
+        <id>2bb14a821ba99010c2bc0fa9cc4bcb87</id>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>37b14a821ba99010c2bc0fa9cc4bcb99</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>email</field>
+        <id>2bb14a821ba99010c2bc0fa9cc4bcb87</id>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>b7b14a821ba99010c2bc0fa9cc4bcb9a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_2bb14a821ba99010c2bc0fa9cc4bcb87</table>
+        <value>{{action.email}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>script</field>
+        <id>2bb14a821ba99010c2bc0fa9cc4bcb87</id>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>f7b14a821ba99010c2bc0fa9cc4bcb99</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=2bb14a821ba99010c2bc0fa9cc4bcb87^sys_idNOT IN67b14a821ba99010c2bc0fa9cc4bcb8a"/>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>email</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Pre Processing">2bb14a821ba99010c2bc0fa9cc4bcb87</model>
+        <model_id>2bb14a821ba99010c2bc0fa9cc4bcb87</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_2bb14a821ba99010c2bc0fa9cc4bcb87</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:29</sys_created_on>
+        <sys_id>67b14a821ba99010c2bc0fa9cc4bcb8a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=2bb14a821ba99010c2bc0fa9cc4bcb87^sys_idNOT IN23b14a821ba99010c2bc0fa9cc4bcb91"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=0ac4bdd0-2e0a-4b45-a5b5-59c0e3d7cf0f</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>email</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>email</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Pre Processing">2bb14a821ba99010c2bc0fa9cc4bcb87</model>
+        <model_id>2bb14a821ba99010c2bc0fa9cc4bcb87</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_2bb14a821ba99010c2bc0fa9cc4bcb87</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>23b14a821ba99010c2bc0fa9cc4bcb91</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Lookup User ID">27b14a821ba99010c2bc0fa9cc4bcb70</action>
+        <cid>eb01b2a2-0c40-461b-8a84-df94573dd99f</cid>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Lookup User ID</label>
+        <order>2</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="REST">07a762fb47222200b4fad7527c9a7129</step_type>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>3bb14a821ba99010c2bc0fa9cc4bcb9c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=3bb14a821ba99010c2bc0fa9cc4bcb9c"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>3bb14a821ba99010c2bc0fa9cc4bcb9c</document_key>
+        <order>15</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>33b14a821ba99010c2bc0fa9cc4bcbbc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <value>https://www.workplace.com</value>
+        <variable display_value="">a67a8ef03b23320057a4a2e334efc472</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>3bb14a821ba99010c2bc0fa9cc4bcb9c</document_key>
+        <order>20</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>37b14a821ba99010c2bc0fa9cc4bcbbb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <value>scim/v1/Users</value>
+        <variable display_value="">3d090af03b23320057a4a2e334efc455</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>3bb14a821ba99010c2bc0fa9cc4bcb9c</document_key>
+        <order>13</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>7fb14a821ba99010c2bc0fa9cc4bcbbb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <value>18409d8007482000dada43c0d1021e8f</value>
+        <variable display_value="">c30a451d2f201300a09a839fb18c95b4</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>3bb14a821ba99010c2bc0fa9cc4bcb9c</document_key>
+        <order>12</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>b7b14a821ba99010c2bc0fa9cc4bcbbc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <value>35aa573fd7802200bdbaee5b5e610375</value>
+        <variable display_value="">f11ebf865f101300a09a2abd7f466652</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>3bb14a821ba99010c2bc0fa9cc4bcb9c</document_key>
+        <order>30</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>bbb14a821ba99010c2bc0fa9cc4bcbbb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <value>{"type":"ADV_NV","value":[]}</value>
+        <variable display_value="">371837f1c71003007b237f48cb9763b0</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>3bb14a821ba99010c2bc0fa9cc4bcb9c</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>f3b14a821ba99010c2bc0fa9cc4bcbbc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <value>3a239d731b911010c2bc0fa9cc4bcb69</value>
+        <variable display_value="">445c2a72b3701300176b051a16a8dcc2</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>3bb14a821ba99010c2bc0fa9cc4bcb9c</document_key>
+        <order>5</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>f7b14a821ba99010c2bc0fa9cc4bcbbb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <value>define_connection_inline</value>
+        <variable display_value="">91e207d03b50030057a4a2e334efc4a0</variable>
+    </sys_variable_value>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=3bb14a821ba99010c2bc0fa9cc4bcb9c^sys_idNOT IN73b14a821ba99010c2bc0fa9cc4bcbaf"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,isLocal=true,uiType=password2,uiTypeLabel=Password (2 Way Encrypted),uiUniqueId=d42e9b0e-d859-441d-9c74-95706af9f847</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>sn_auth_token</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">password2</internal_type>
+        <label>Credential Value</label>
+        <mandatory>false</mandatory>
+        <max_length>255</max_length>
+        <model display_value="Lookup User ID">3bb14a821ba99010c2bc0fa9cc4bcb9c</model>
+        <model_id>3bb14a821ba99010c2bc0fa9cc4bcb9c</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_3bb14a821ba99010c2bc0fa9cc4bcb9c</name>
+        <next_element/>
+        <order>7</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>73b14a821ba99010c2bc0fa9cc4bcbaf</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Lookup User ID">27b14a821ba99010c2bc0fa9cc4bcb70</action>
+        <cid>f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb</cid>
+        <extended_inputs/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Handle Errors</label>
+        <order>3</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>bfb14a821ba99010c2bc0fa9cc4bcbbf</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:31</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=bfb14a821ba99010c2bc0fa9cc4bcbbf"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>bfb14a821ba99010c2bc0fa9cc4bcbbf</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>00c18a821ba99010c2bc0fa9cc4bcb0f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:31</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+ inputs = new sn_fb_wp_spoke.FacebookWorkplaceUtils().trimStringInputs(inputs);
+  outputs.user_id = "";
+  if(inputs.status_code == '200') {
+  var data = JSON.parse(inputs.response);
+	for(i=0; i&lt;data.Resources.length; i++) {
+    	if(data.Resources[i].userName == inputs.email)
+        	outputs.user_id = data.Resources[i].id.toString();      
+    }
+    
+      if(!outputs.user_id) {
+  		inputs.response = "User does not exist.";
+   		outputs = new sn_fb_wp_spoke.FacebookWorkplaceErrorHandler().userErrorHandler(inputs,outputs);
+  		} else if (outputs.user_id)
+  			outputs.status = 'Success';
+  		    
+  } else
+  	outputs = new sn_fb_wp_spoke.FacebookWorkplaceErrorHandler().userErrorHandler(inputs, outputs);
+    
+})(inputs, outputs);</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>bfb14a821ba99010c2bc0fa9cc4bcbbf</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>4cc18a821ba99010c2bc0fa9cc4bcb0e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:31</sys_updated_on>
+        <value>35aa573fd7802200bdbaee5b5e610375</value>
+        <variable display_value="">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=bfb14a821ba99010c2bc0fa9cc4bcbbf"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>application</field>
+        <id>bfb14a821ba99010c2bc0fa9cc4bcbbf</id>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>08c18a821ba99010c2bc0fa9cc4bcb0e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:31</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>email</field>
+        <id>bfb14a821ba99010c2bc0fa9cc4bcbbf</id>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>00c18a821ba99010c2bc0fa9cc4bcb10</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:31</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_bfb14a821ba99010c2bc0fa9cc4bcbbf</table>
+        <value>{{step[0b69028e-6cbe-4daa-acc9-5d4620941423].email}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>response</field>
+        <id>bfb14a821ba99010c2bc0fa9cc4bcbbf</id>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>4cc18a821ba99010c2bc0fa9cc4bcb0f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:31</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_bfb14a821ba99010c2bc0fa9cc4bcbbf</table>
+        <value>{{step[eb01b2a2-0c40-461b-8a84-df94573dd99f].response_body}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>script</field>
+        <id>bfb14a821ba99010c2bc0fa9cc4bcbbf</id>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>c8c18a821ba99010c2bc0fa9cc4bcb0e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:31</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>status_code</field>
+        <id>bfb14a821ba99010c2bc0fa9cc4bcbbf</id>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>88c18a821ba99010c2bc0fa9cc4bcb0f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:31</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_bfb14a821ba99010c2bc0fa9cc4bcbbf</table>
+        <value>{{step[eb01b2a2-0c40-461b-8a84-df94573dd99f].status_code}}</value>
+    </sys_element_mapping>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=bfb14a821ba99010c2bc0fa9cc4bcbbf^sys_idNOT IN33b14a821ba99010c2bc0fa9cc4bcbee,88c14a821ba99010c2bc0fa9cc4bcbf3,bfb14a821ba99010c2bc0fa9cc4bcbe7"/>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>email</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Handle Errors">bfb14a821ba99010c2bc0fa9cc4bcbbf</model>
+        <model_id>bfb14a821ba99010c2bc0fa9cc4bcbbf</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_bfb14a821ba99010c2bc0fa9cc4bcbbf</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>33b14a821ba99010c2bc0fa9cc4bcbee</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>status_code</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Handle Errors">bfb14a821ba99010c2bc0fa9cc4bcbbf</model>
+        <model_id>bfb14a821ba99010c2bc0fa9cc4bcbbf</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_bfb14a821ba99010c2bc0fa9cc4bcbbf</name>
+        <next_element/>
+        <order>200</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>88c14a821ba99010c2bc0fa9cc4bcbf3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>response</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Handle Errors">bfb14a821ba99010c2bc0fa9cc4bcbbf</model>
+        <model_id>bfb14a821ba99010c2bc0fa9cc4bcbbf</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_bfb14a821ba99010c2bc0fa9cc4bcbbf</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>bfb14a821ba99010c2bc0fa9cc4bcbe7</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=bfb14a821ba99010c2bc0fa9cc4bcbbf^sys_idNOT IN0cc14a821ba99010c2bc0fa9cc4bcbf9,84c18a821ba99010c2bc0fa9cc4bcb06,8cc14a821ba99010c2bc0fa9cc4bcbff"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=b065a447-d6a7-4c79-b8d6-7ab516c4c811</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>user_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>user_id</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Handle Errors">bfb14a821ba99010c2bc0fa9cc4bcbbf</model>
+        <model_id>bfb14a821ba99010c2bc0fa9cc4bcbbf</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_bfb14a821ba99010c2bc0fa9cc4bcbbf</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>0cc14a821ba99010c2bc0fa9cc4bcbf9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=c8e464c2-a6ff-4dc8-8825-387b011b30b9</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>error_message</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>error_message</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Handle Errors">bfb14a821ba99010c2bc0fa9cc4bcbbf</model>
+        <model_id>bfb14a821ba99010c2bc0fa9cc4bcbbf</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_bfb14a821ba99010c2bc0fa9cc4bcbbf</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>84c18a821ba99010c2bc0fa9cc4bcb06</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=choice,uiTypeLabel=Choice,uiUniqueId=ad0e6e35-3f88-478c-a430-e862aa837b0b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice>1</choice>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>status</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Choice">choice</internal_type>
+        <label>status</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Handle Errors">bfb14a821ba99010c2bc0fa9cc4bcbbf</model>
+        <model_id>bfb14a821ba99010c2bc0fa9cc4bcbbf</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_bfb14a821ba99010c2bc0fa9cc4bcbbf</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>8cc14a821ba99010c2bc0fa9cc4bcbff</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_action_input action="delete_multiple" query="model=27b14a821ba99010c2bc0fa9cc4bcb70^sys_idNOT INefb14a821ba99010c2bc0fa9cc4bcb73"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=fb15039e-cf6e-4ef5-b77b-9f776e2f4126</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>email</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Email</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Lookup User ID">27b14a821ba99010c2bc0fa9cc4bcb70</model>
+        <model_id>27b14a821ba99010c2bc0fa9cc4bcb70</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_input_27b14a821ba99010c2bc0fa9cc4bcb70</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:29</sys_created_on>
+        <sys_id>efb14a821ba99010c2bc0fa9cc4bcb73</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_output action="delete_multiple" query="model=27b14a821ba99010c2bc0fa9cc4bcb70^sys_idNOT IN00c18a821ba99010c2bc0fa9cc4bcb23,44c18a821ba99010c2bc0fa9cc4bcb1d,8cc18a821ba99010c2bc0fa9cc4bcb12"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=481ad4cf-7707-410d-bbf8-18421522905b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>user_id</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>User ID</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Lookup User ID">27b14a821ba99010c2bc0fa9cc4bcb70</model>
+        <model_id>27b14a821ba99010c2bc0fa9cc4bcb70</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_27b14a821ba99010c2bc0fa9cc4bcb70</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:32</sys_created_on>
+        <sys_id>00c18a821ba99010c2bc0fa9cc4bcb23</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:34</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=71050f3e-8714-4294-b7f3-9dce244859c7</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>error_message</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Error Message</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Lookup User ID">27b14a821ba99010c2bc0fa9cc4bcb70</model>
+        <model_id>27b14a821ba99010c2bc0fa9cc4bcb70</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_27b14a821ba99010c2bc0fa9cc4bcb70</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>44c18a821ba99010c2bc0fa9cc4bcb1d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:34</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=choice,uiTypeLabel=Choice,uiUniqueId=5453f84f-c452-4fdf-b9ef-889d19f8f743</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice>3</choice>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>Success</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>status</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="Choice">choice</internal_type>
+        <label>Status</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Lookup User ID">27b14a821ba99010c2bc0fa9cc4bcb70</model>
+        <model_id>27b14a821ba99010c2bc0fa9cc4bcb70</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_27b14a821ba99010c2bc0fa9cc4bcb70</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>8cc18a821ba99010c2bc0fa9cc4bcb12</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_step_instance action="delete_multiple" query="action=27b14a821ba99010c2bc0fa9cc4bcb70^sys_idNOT IN2bb14a821ba99010c2bc0fa9cc4bcb87,3bb14a821ba99010c2bc0fa9cc4bcb9c,bfb14a821ba99010c2bc0fa9cc4bcbbf"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Lookup User ID">27b14a821ba99010c2bc0fa9cc4bcb70</action>
+        <cid>0b69028e-6cbe-4daa-acc9-5d4620941423</cid>
+        <extended_inputs/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Pre Processing</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:29</sys_created_on>
+        <sys_id>2bb14a821ba99010c2bc0fa9cc4bcb87</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=2bb14a821ba99010c2bc0fa9cc4bcb87"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>2bb14a821ba99010c2bc0fa9cc4bcb87</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>3fb14a821ba99010c2bc0fa9cc4bcb99</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+  inputs = new sn_fb_wp_spoke.FacebookWorkplaceUtils().trimStringInputs(inputs);
+  outputs.email = inputs.email;
+})(inputs, outputs);
+</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>2bb14a821ba99010c2bc0fa9cc4bcb87</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>7bb14a821ba99010c2bc0fa9cc4bcb99</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <value>35aa573fd7802200bdbaee5b5e610375</value>
+        <variable display_value="">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=2bb14a821ba99010c2bc0fa9cc4bcb87"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>application</field>
+        <id>2bb14a821ba99010c2bc0fa9cc4bcb87</id>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>37b14a821ba99010c2bc0fa9cc4bcb99</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>email</field>
+        <id>2bb14a821ba99010c2bc0fa9cc4bcb87</id>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>b7b14a821ba99010c2bc0fa9cc4bcb9a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_2bb14a821ba99010c2bc0fa9cc4bcb87</table>
+        <value>{{action.email}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>script</field>
+        <id>2bb14a821ba99010c2bc0fa9cc4bcb87</id>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>f7b14a821ba99010c2bc0fa9cc4bcb99</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=2bb14a821ba99010c2bc0fa9cc4bcb87^sys_idNOT IN67b14a821ba99010c2bc0fa9cc4bcb8a"/>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>email</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Pre Processing">2bb14a821ba99010c2bc0fa9cc4bcb87</model>
+        <model_id>2bb14a821ba99010c2bc0fa9cc4bcb87</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_2bb14a821ba99010c2bc0fa9cc4bcb87</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:29</sys_created_on>
+        <sys_id>67b14a821ba99010c2bc0fa9cc4bcb8a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=2bb14a821ba99010c2bc0fa9cc4bcb87^sys_idNOT IN23b14a821ba99010c2bc0fa9cc4bcb91"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=0ac4bdd0-2e0a-4b45-a5b5-59c0e3d7cf0f</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>email</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>email</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Pre Processing">2bb14a821ba99010c2bc0fa9cc4bcb87</model>
+        <model_id>2bb14a821ba99010c2bc0fa9cc4bcb87</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_2bb14a821ba99010c2bc0fa9cc4bcb87</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>23b14a821ba99010c2bc0fa9cc4bcb91</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:32</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Lookup User ID">27b14a821ba99010c2bc0fa9cc4bcb70</action>
+        <cid>eb01b2a2-0c40-461b-8a84-df94573dd99f</cid>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Lookup User ID</label>
+        <order>2</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="REST">07a762fb47222200b4fad7527c9a7129</step_type>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>3bb14a821ba99010c2bc0fa9cc4bcb9c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=3bb14a821ba99010c2bc0fa9cc4bcb9c"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>3bb14a821ba99010c2bc0fa9cc4bcb9c</document_key>
+        <order>15</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>33b14a821ba99010c2bc0fa9cc4bcbbc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <value>https://www.workplace.com</value>
+        <variable display_value="">a67a8ef03b23320057a4a2e334efc472</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>3bb14a821ba99010c2bc0fa9cc4bcb9c</document_key>
+        <order>20</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>37b14a821ba99010c2bc0fa9cc4bcbbb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <value>scim/v1/Users</value>
+        <variable display_value="">3d090af03b23320057a4a2e334efc455</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>3bb14a821ba99010c2bc0fa9cc4bcb9c</document_key>
+        <order>13</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>7fb14a821ba99010c2bc0fa9cc4bcbbb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <value>18409d8007482000dada43c0d1021e8f</value>
+        <variable display_value="">c30a451d2f201300a09a839fb18c95b4</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>3bb14a821ba99010c2bc0fa9cc4bcb9c</document_key>
+        <order>12</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>b7b14a821ba99010c2bc0fa9cc4bcbbc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <value>35aa573fd7802200bdbaee5b5e610375</value>
+        <variable display_value="">f11ebf865f101300a09a2abd7f466652</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>3bb14a821ba99010c2bc0fa9cc4bcb9c</document_key>
+        <order>30</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>bbb14a821ba99010c2bc0fa9cc4bcbbb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <value>{"type":"ADV_NV","value":[]}</value>
+        <variable display_value="">371837f1c71003007b237f48cb9763b0</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>3bb14a821ba99010c2bc0fa9cc4bcb9c</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>f3b14a821ba99010c2bc0fa9cc4bcbbc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <value>3a239d731b911010c2bc0fa9cc4bcb69</value>
+        <variable display_value="">445c2a72b3701300176b051a16a8dcc2</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>3bb14a821ba99010c2bc0fa9cc4bcb9c</document_key>
+        <order>5</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>f7b14a821ba99010c2bc0fa9cc4bcbbb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:30</sys_updated_on>
+        <value>define_connection_inline</value>
+        <variable display_value="">91e207d03b50030057a4a2e334efc4a0</variable>
+    </sys_variable_value>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=3bb14a821ba99010c2bc0fa9cc4bcb9c^sys_idNOT IN73b14a821ba99010c2bc0fa9cc4bcbaf"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,isLocal=true,uiType=password2,uiTypeLabel=Password (2 Way Encrypted),uiUniqueId=d42e9b0e-d859-441d-9c74-95706af9f847</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>sn_auth_token</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">password2</internal_type>
+        <label>Credential Value</label>
+        <mandatory>false</mandatory>
+        <max_length>255</max_length>
+        <model display_value="Lookup User ID">3bb14a821ba99010c2bc0fa9cc4bcb9c</model>
+        <model_id>3bb14a821ba99010c2bc0fa9cc4bcb9c</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_3bb14a821ba99010c2bc0fa9cc4bcb9c</name>
+        <next_element/>
+        <order>7</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>73b14a821ba99010c2bc0fa9cc4bcbaf</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Lookup User ID">27b14a821ba99010c2bc0fa9cc4bcb70</action>
+        <cid>f6831a0f-ddba-4c12-b6e6-ad9cc3037fcb</cid>
+        <extended_inputs/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Handle Errors</label>
+        <order>3</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>bfb14a821ba99010c2bc0fa9cc4bcbbf</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:31</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=bfb14a821ba99010c2bc0fa9cc4bcbbf"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>bfb14a821ba99010c2bc0fa9cc4bcbbf</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>00c18a821ba99010c2bc0fa9cc4bcb0f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:31</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+ inputs = new sn_fb_wp_spoke.FacebookWorkplaceUtils().trimStringInputs(inputs);
+  outputs.user_id = "";
+  if(inputs.status_code == '200') {
+  var data = JSON.parse(inputs.response);
+	for(i=0; i&lt;data.Resources.length; i++) {
+    	if(data.Resources[i].userName == inputs.email)
+        	outputs.user_id = data.Resources[i].id.toString();      
+    }
+    
+      if(!outputs.user_id) {
+  		inputs.response = "User does not exist.";
+   		outputs = new sn_fb_wp_spoke.FacebookWorkplaceErrorHandler().userErrorHandler(inputs,outputs);
+  		} else if (outputs.user_id)
+  			outputs.status = 'Success';
+  		    
+  } else
+  	outputs = new sn_fb_wp_spoke.FacebookWorkplaceErrorHandler().userErrorHandler(inputs, outputs);
+    
+})(inputs, outputs);</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>bfb14a821ba99010c2bc0fa9cc4bcbbf</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>4cc18a821ba99010c2bc0fa9cc4bcb0e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:31</sys_updated_on>
+        <value>35aa573fd7802200bdbaee5b5e610375</value>
+        <variable display_value="">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=bfb14a821ba99010c2bc0fa9cc4bcbbf"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>application</field>
+        <id>bfb14a821ba99010c2bc0fa9cc4bcbbf</id>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>08c18a821ba99010c2bc0fa9cc4bcb0e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:31</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>email</field>
+        <id>bfb14a821ba99010c2bc0fa9cc4bcbbf</id>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>00c18a821ba99010c2bc0fa9cc4bcb10</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:31</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_bfb14a821ba99010c2bc0fa9cc4bcbbf</table>
+        <value>{{step[0b69028e-6cbe-4daa-acc9-5d4620941423].email}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>response</field>
+        <id>bfb14a821ba99010c2bc0fa9cc4bcbbf</id>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>4cc18a821ba99010c2bc0fa9cc4bcb0f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:31</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_bfb14a821ba99010c2bc0fa9cc4bcbbf</table>
+        <value>{{step[eb01b2a2-0c40-461b-8a84-df94573dd99f].response_body}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>script</field>
+        <id>bfb14a821ba99010c2bc0fa9cc4bcbbf</id>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>c8c18a821ba99010c2bc0fa9cc4bcb0e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:31</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>status_code</field>
+        <id>bfb14a821ba99010c2bc0fa9cc4bcbbf</id>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>88c18a821ba99010c2bc0fa9cc4bcb0f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:31</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_bfb14a821ba99010c2bc0fa9cc4bcbbf</table>
+        <value>{{step[eb01b2a2-0c40-461b-8a84-df94573dd99f].status_code}}</value>
+    </sys_element_mapping>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=bfb14a821ba99010c2bc0fa9cc4bcbbf^sys_idNOT IN33b14a821ba99010c2bc0fa9cc4bcbee,88c14a821ba99010c2bc0fa9cc4bcbf3,bfb14a821ba99010c2bc0fa9cc4bcbe7"/>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>email</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Handle Errors">bfb14a821ba99010c2bc0fa9cc4bcbbf</model>
+        <model_id>bfb14a821ba99010c2bc0fa9cc4bcbbf</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_bfb14a821ba99010c2bc0fa9cc4bcbbf</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>33b14a821ba99010c2bc0fa9cc4bcbee</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>status_code</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Handle Errors">bfb14a821ba99010c2bc0fa9cc4bcbbf</model>
+        <model_id>bfb14a821ba99010c2bc0fa9cc4bcbbf</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_bfb14a821ba99010c2bc0fa9cc4bcbbf</name>
+        <next_element/>
+        <order>200</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>88c14a821ba99010c2bc0fa9cc4bcbf3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>response</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Handle Errors">bfb14a821ba99010c2bc0fa9cc4bcbbf</model>
+        <model_id>bfb14a821ba99010c2bc0fa9cc4bcbbf</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_bfb14a821ba99010c2bc0fa9cc4bcbbf</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:30</sys_created_on>
+        <sys_id>bfb14a821ba99010c2bc0fa9cc4bcbe7</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=bfb14a821ba99010c2bc0fa9cc4bcbbf^sys_idNOT IN0cc14a821ba99010c2bc0fa9cc4bcbf9,84c18a821ba99010c2bc0fa9cc4bcb06,8cc14a821ba99010c2bc0fa9cc4bcbff"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=b065a447-d6a7-4c79-b8d6-7ab516c4c811</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>user_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>user_id</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Handle Errors">bfb14a821ba99010c2bc0fa9cc4bcbbf</model>
+        <model_id>bfb14a821ba99010c2bc0fa9cc4bcbbf</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_bfb14a821ba99010c2bc0fa9cc4bcbbf</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>0cc14a821ba99010c2bc0fa9cc4bcbf9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=c8e464c2-a6ff-4dc8-8825-387b011b30b9</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>error_message</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>error_message</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Handle Errors">bfb14a821ba99010c2bc0fa9cc4bcbbf</model>
+        <model_id>bfb14a821ba99010c2bc0fa9cc4bcbbf</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_bfb14a821ba99010c2bc0fa9cc4bcbbf</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>84c18a821ba99010c2bc0fa9cc4bcb06</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=choice,uiTypeLabel=Choice,uiUniqueId=ad0e6e35-3f88-478c-a430-e862aa837b0b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice>1</choice>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>status</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Choice">choice</internal_type>
+        <label>status</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Handle Errors">bfb14a821ba99010c2bc0fa9cc4bcbbf</model>
+        <model_id>bfb14a821ba99010c2bc0fa9cc4bcbbf</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_bfb14a821ba99010c2bc0fa9cc4bcbbf</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>8cc14a821ba99010c2bc0fa9cc4bcbff</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_input_27b14a821ba99010c2bc0fa9cc4bcb70^sys_idNOT IN27b14a821ba99010c2bc0fa9cc4bcb85"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>email</element>
+        <help/>
+        <hint/>
+        <label>Email</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_27b14a821ba99010c2bc0fa9cc4bcb70</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:29</sys_created_on>
+        <sys_id>27b14a821ba99010c2bc0fa9cc4bcb85</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Workplace By Facebook" source="x_snc_workplace_fb">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:29</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_output_27b14a821ba99010c2bc0fa9cc4bcb70^sys_idNOT IN44c18a821ba99010c2bc0fa9cc4bcb27,88c18a821ba99010c2bc0fa9cc4bcb21,ccc18a821ba99010c2bc0fa9cc4bcb1b"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>user_id</element>
+        <help/>
+        <hint/>
+        <label>User ID</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_27b14a821ba99010c2bc0fa9cc4bcb70</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:32</sys_created_on>
+        <sys_id>44c18a821ba99010c2bc0fa9cc4bcb27</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Workplace By Facebook" source="x_snc_workplace_fb">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:32</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>error_message</element>
+        <help/>
+        <hint/>
+        <label>Error Message</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_27b14a821ba99010c2bc0fa9cc4bcb70</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:32</sys_created_on>
+        <sys_id>88c18a821ba99010c2bc0fa9cc4bcb21</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Workplace By Facebook" source="x_snc_workplace_fb">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:32</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>status</element>
+        <help/>
+        <hint/>
+        <label>Status</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_27b14a821ba99010c2bc0fa9cc4bcb70</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>ankit.singh@snc</sys_created_by>
+        <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+        <sys_id>ccc18a821ba99010c2bc0fa9cc4bcb1b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Workplace By Facebook" source="x_snc_workplace_fb">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Workplace By Facebook">bdfc398e1b699010c2bc0fa9cc4bcbac</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankit.singh@snc</sys_updated_by>
+        <sys_updated_on>2020-06-23 11:18:31</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_27b14a821ba99010c2bc0fa9cc4bcb70^sys_idNOT IN84c18a821ba99010c2bc0fa9cc4bcb16,04c18a821ba99010c2bc0fa9cc4bcb17"/>
+    <sys_choice field="status" table="var__m_sys_hub_action_output_27b14a821ba99010c2bc0fa9cc4bcb70">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Error</label>
+            <language>en</language>
+            <name>var__m_sys_hub_action_output_27b14a821ba99010c2bc0fa9cc4bcb70</name>
+            <sequence>0</sequence>
+            <sys_created_by>ankit.singh@snc</sys_created_by>
+            <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>84c18a821ba99010c2bc0fa9cc4bcb16</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ankit.singh@snc</sys_updated_by>
+            <sys_updated_on>2020-06-23 11:18:31</sys_updated_on>
+            <value>Error</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Success</label>
+            <language>en</language>
+            <name>var__m_sys_hub_action_output_27b14a821ba99010c2bc0fa9cc4bcb70</name>
+            <sequence>1</sequence>
+            <sys_created_by>ankit.singh@snc</sys_created_by>
+            <sys_created_on>2020-06-23 11:18:31</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>04c18a821ba99010c2bc0fa9cc4bcb17</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ankit.singh@snc</sys_updated_by>
+            <sys_updated_on>2020-06-23 11:18:31</sys_updated_on>
+            <value>Success</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>
